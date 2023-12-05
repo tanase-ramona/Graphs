@@ -1,0 +1,111 @@
+30 79
+Insula Nod_10 35
+Insula Nod_18 20
+Insula Nod_27 40
+Insula Nod_18 25
+Nod_2 Nod_12 35
+Nod_2 Nod_20 12
+Nod_2 Nod_7 19
+Nod_3 Nod_17 13
+Nod_3 Nod_25 15
+Nod_3 Nod_13 60
+Nod_3 Nod_23 10
+Nod_4 Nod_21 12
+Nod_4 Nod_8 35
+Nod_5 Nod_16 24
+Nod_5 Nod_26 31
+Nod_5 Nod_6 16
+Nod_5 Nod_8 17
+Nod_5 Nod_15 18
+Nod_6 Nod_16 20
+Nod_6 Nod_19 21
+Nod_6 Nod_28 31
+Nod_6 Nod_21 11
+Nod_6 Nod_15 37
+Nod_7 Nod_17 28
+Nod_7 Nod_26 13
+Nod_7 Nod_20 12
+Nod_7 Nod_29 12
+Nod_7 Nod_23 31
+Nod_7 Nod_21 14
+Nod_8 Nod_24 15
+Nod_8 Nod_20 27
+Corabie Nod_19 9
+Corabie Nod_14 6
+Corabie Nod_21 15
+Corabie Nod_15 20
+Corabie Nod_12 21
+Nod_9 Nod_27 14
+Nod_9 Nod_13 90
+Nod_9 Nod_14 50
+Nod_10 Insula 40
+Nod_10 Nod_21 30
+Nod_10 Nod_12 17
+Nod_11 Nod_24 12
+Nod_11 Nod_25 7
+Nod_11 Nod_18 10
+Nod_12 Nod_16 15
+Nod_12 Nod_28 9
+Nod_12 Nod_29 7
+Nod_12 Nod_15 13
+Nod_12 Nod_2 29
+Nod_13 Nod_16 14
+Nod_13 Nod_17 30
+Nod_13 Nod_25 25
+Nod_14 Nod_17 10
+Nod_14 Nod_20 14
+Nod_15 Nod_24 42
+Nod_15 Nod_3 26
+Nod_15 Nod_2 19
+Nod_16 Nod_20 17
+Nod_16 Nod_22 15
+Nod_16 Nod_5 50
+Nod_16 Corabie 30
+Nod_17 Nod_19 14
+Nod_18 Nod_25 6
+Nod_18 Nod_27 8
+Nod_18 Nod_20 13
+Nod_18 Nod_12 30
+Nod_20 Nod_25 5
+Nod_20 Nod_29 11
+Nod_21 Insula 13
+Nod_22 Nod_28 13
+Nod_22 Nod_23 14
+Nod_23 Corabie 20
+Nod_25 Nod_27 6
+Nod_25 Nod_29 51
+Nod_26 Nod_28 52
+Nod_27 Nod_28 48
+Nod_27 Nod_29 10
+Nod_27 Nod_5 15
+Insula 1
+Corabie 1
+Nod_2 30
+Nod_3 27
+Nod_4 35
+Nod_5 32
+Nod_6 32
+Nod_7 32
+Nod_8 41
+Nod_9 40
+Nod_10 16
+Nod_11 21
+Nod_12 13
+Nod_13 18
+Nod_14 14
+Nod_15 28
+Nod_16 28
+Nod_17 14
+Nod_18 15
+Nod_19 19
+Nod_20 17
+Nod_21 49
+Nod_22 31
+Nod_23 40
+Nod_24 29
+Nod_25 60
+Nod_26 43
+Nod_27 21
+Nod_28 38
+Nod_29 17
+5025

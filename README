@@ -1,0 +1,100 @@
+/* Tanase Elena-Ramona 313CC */
+
+Incepem prin a declara fisierele.
+Definim structura de nod pentru a retine nodurile din graf, care are
+urmatoarele campuri:
+- no_comp = numarul componentei conexe din care face partul nodul (muchia)
+- start = indicele nodului din care pleaca muchia
+- end = indicele nodului in care se termina muchia
+- cost = costul muchiei
+- legatura cu urmatorul nod
+Functii:
+- is_word primeste ca argumente matrix = matricea de cuvinte, dim = numarul de
+linii din matrice, name = sir de caractere si verifica daca acesta este sau nu
+salvat in matrice, caz in care retuneaza 1, altfel returneaza 0. Daca
+dimensiunea matricei este negativa, inseamna ca nu avem niciun cuvant salvat
+si vom returna 0.
+- index_char primeste ca argument matricea de cuvinte, dimensiunea sa (numarul
+de linii) si un sir de caractere si returneaza linia la care acesta se gaseste
+in matrice.
+- create_node primeste ca argument s si e reprezentand indicii nodurilor de start
+si end (de unde pleaca si unde se duce o muchie) si c, costul muchiei
+si creeaza un nod cu aceste campuri. Numarul componentei conexe este initial
+0 pentru un nou nod, caci nu face parte din nicio suprafata, iar un nou nod se
+va lega mereu la NULL.
+- add_node primeste ca argumente vectorul de liste, indicele nodului din care
+pleaca muchia si indicele nodului unde se termina, precum si costul muchiei.
+Fiind un graf neorientat vom adauga legatura atat in lista nodului destinatie
+catre sursa, cat si in lista sursei catre destinatie.
+- add_node_2 este similara cu add_node, doar ca este folosita pentru un graf
+orientat, deci legatura se face doar de la sursa la destinatie
+- DFS este functia de parcurgere a grafului in adancime. Primeste ca argumente
+vectorul de liste, un vector visited care marcheaza cu 1 nodurile vizitate,
+indexul nodului de la care se porneste parcurgerea si numarul componentei
+conexe pe care o parcurgem. Este o functie recursiva, care la fiecare pas
+marcheaza cu 1 nodul curent, ii actualizeaza campul no_comp cu numarul
+componentei conexe la care suntem si ii parcurge lista de adiacenta. Pentru
+fiecare nod vecin nevizitat, se actualizeaza campul no_comp si se aplica
+DFS pe acesta.
+- conex_components primeste ca argumente N = nr de noduri si vectorul de liste.
+Parcurge toate nodurile si atunci cand se gaseste unul nevizitat, se aplica
+DFS pe el. Dupa acest apel, i se vor vizita toti vecinii, si impreuna vor forma
+o componenta conexa, prim urmare incrementam atat numarul cat si indicele
+componentelor. Se reiau pasii pentru urmatorul nod nevizitat, care va crea o
+noua componenta conexa.
+- DFS_2 este similara functiei DFS, doar ca la parcurgerea vecinilor verificam
+daca vecinul curent este nodul cautat, dat ca argument prin index_d, caz in
+care returnam 1. Daca nu se gaseste nodul cautat printre vecini, returnam 0.
+- min_list primeste ca argument vectorul viz, care indica nodurile vizitate,
+vectorul de liste si indicele unui nod. Parcurgem lista de adiacenta a nodului
+dat ca argument cu ajutorul nodului aux, si alegem nodul de cost minim,
+comparand la fiecare pas costul nodului cu costul minim de pana atunci. Daca
+este mai mic, actualizam minimul si retinem pozitia nodului in variabila
+aux_min, pe care o vom returna. Prin urmare functia returneaza nodul vecin
+de cost nimin
+- prim primeste ca argumente vectorul de liste, un nod din graf si N_comp =
+numarul de noduri din componenta conexa pentru care aplicam functia. Folosim
+vectorul viz, initializat la inceput cu 0, pentru a marca nodurile vizitate.
+Nodul din care pornim il vizitam si il adaugam in vectorul tree, care retine
+indicele nodurilor care fac parte din arborele de cost minim. Cat timp mai avem
+noduri nevizitate (caci in arborele de cost minim sunt incluse toate nodurile),
+parcurgem nodurile din arbore si le calculam cu functia min_list vecinul de
+cost minim. Daca acesta exista si are costul mai mic decat costul minim,
+actualizam costul minim si retinem nodul. Dupa ce am parcurs toate nodurile
+din arbore, in variabila min_node vom avea indicele vecinuluji minim, pe care
+il vom adauga in tree, il vom vizita si ii vom adauga costul sau la suma.
+La final returnam suma.
+In functia main, verificam daca rezolvam prima (argv[1] = 1) sau a doua
+(argv[1] = 2) cerinta.
+Pentru prima cerinta:
+- deschidem fisierele si verificam daca aceasta operatie s-a realizat
+- citim din fisier N = numarul de noduri si M = numarul de muchii
+- alocam dinamic vectorul de liste, care va avea cate o lista pentru fiecare
+nod, toate primele noduri fiind de la nodul i la nodul 1 cu costul 0
+- citim apoi din fisier numele nodului sursa (source), destinatie (destination),
+si costul muchiei. Fiecare string va fi introdus inatr-o matrice de cuvinte o
+singura data, astfel ca verificam daca este deja introdus sau nu. Daca nu
+se gaseste in matrice il introducem. Retinem in variabilele index_d si index_s
+indicii nodurilor destinatie si sursa. Vom asocia fiecarui nume un indice
+pentru a usura lucrul cu nodurile.
+- apelam functia conex_components pentru a scrie in fisier numarul de
+componente conexe, si il retinem in variabila cc
+- in vectorul N_comp, pe pozitia i vom calcula numarul de noduri din componenta
+conexa i, parcurgand fiecare nod si verificandu-i campul no_comp
+- pentru fiecare componenta conexa, cautam in lista primul nod care face parte
+din aceasta si aplicam algoritmul prim pornind de la acesta, iar suma returnata
+o retinem in vectorul sum, pe care apoi il sortam
+- afisam vectorul sum, unde sunt retinute costurile minime pentru fiecare
+componenta conexa
+- eliberam memoria alocata dinamic
+Pentru a doua cerinta:
+- citirea si retinerea grafului in vectorul de liste se face la fel ca la
+prima cerinta
+- in citire vom retine indicele string-urilor "Corabie" si "Insula" in
+variabilele index_ship si index_island
+- aplicam functia DFS_2 pentru a vedea daca avem drum de la Corabie la Insula
+si invers, iar daca nu exista afisam mesajul aferent
+- eliberam memoria alocata dinamic
+Punstaj local: cerinta 1 : 40
+               cerinta 2 : 8
+               punctaj acumulat : 88/100
